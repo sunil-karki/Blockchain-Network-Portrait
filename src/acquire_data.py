@@ -25,7 +25,7 @@ print("isConnected: " + str(isWeb3Connected))
 randNumber = 17140930
 blockNumber = randNumber
 randBlock = w3.eth.get_block(randNumber)
-# print(randBlock)
+print(randBlock)
 print("Block Hash Number: " + randBlock.get('hash').hex())
 print("Block Number: " + str(randBlock.get('number')))
 print("-----------------------------------------------------------\n")

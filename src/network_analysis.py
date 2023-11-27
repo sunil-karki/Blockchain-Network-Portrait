@@ -1,5 +1,6 @@
 import networkx as nx
 import community as cmnty
+import community as community_louvain
 
 # Create an empty directed graph
 G = nx.DiGraph()
@@ -15,7 +16,7 @@ def build_network_graph(transaction_data):
         G.add_edge(transaction['from'], transaction['to'], weight=transaction['value'])
 
 
-def analyze_transaction():
+def analyze_transaction(G):
     # Calculate PageRank scores
     pagerank_scores = nx.pagerank(G)
 
@@ -26,7 +27,7 @@ def analyze_transaction():
         print(f"Node: {node}, PageRank Score: {pagerank_scores[node]}")
 
 
-def identify_key_nodes():
+def identify_key_nodes(G):
     # Calculate node degrees
     node_degrees = G.degree()
 
@@ -36,7 +37,7 @@ def identify_key_nodes():
         print(f"Node: {node}, Degree: {node_degrees[node]}")
 
 
-def betweenness_centrality():
+def betweenness_centrality(G):
     # Calculate betweenness centrality
     betweenness_scores = nx.betweenness_centrality(G)
 
@@ -47,9 +48,10 @@ def betweenness_centrality():
         print(f"Node: {node}, Betweenness Centrality: {betweenness_scores[node]}")
 
 
-def community_detection():
+def community_detection(G):
     # Apply community detection algorithm (Louvain)
     partition = cmnty.best_partition(G)
+    # partition = community_louvain.best_partition(G)
 
     # Print the nodes and their corresponding community assignments
     for node, community_id in partition.items():
