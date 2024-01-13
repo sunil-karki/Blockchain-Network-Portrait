@@ -15,6 +15,8 @@ G.add_node(2)
 G.add_node(3)
 G.add_node(4)
 G.add_node(5)
+G.add_node(5)
+G.add_node('as')
 
 # add edges
 G.add_edge(1, 2)
@@ -23,6 +25,9 @@ G.add_edge(3, 1)
 G.add_edge(4, 1)
 G.add_edge(5, 4)
 G.add_edge(5, 1)
+G.add_edge(5, 1)
+G.add_edge('as', 1)
+
 
 # add nodes
 UG.add_node(2)
