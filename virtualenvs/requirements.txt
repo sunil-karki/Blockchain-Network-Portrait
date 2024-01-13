@@ -3,3 +3,4 @@ networkx==3.1
 community==1.0.0b1
 scipy==1.10.1
 python-louvain==0.16
+seaborn==0.13.1
